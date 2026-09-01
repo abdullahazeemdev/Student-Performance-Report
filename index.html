@@ -1,104 +1,76 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Student Performance Report</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            /* background-color: #111; */
-            color: #000;
-            margin: 0;
-            padding: 20px;
+            margin: 20px;
         }
 
         .container {
-            background-color: #fff;
-            padding: 20px;
             max-width: 1400px;
             margin: auto;
         }
 
         h2 {
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        .meta {
-            font-size: 13px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            font-size: 12px;
         }
 
         th,
         td {
-            border: 1px solid #000;
-            padding: 8px;
+            border: 1px solid black;
+            padding: 10px;
             vertical-align: top;
         }
 
         th {
             background-color: #f2f2f2;
             text-align: center;
-            font-weight: bold;
         }
 
-        .student-profile img {
+        .student {
+            text-align: center;
+        }
+
+        .student img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            object-fit: cover;
-            display: block;
-            margin-bottom: 5px;
         }
 
-        .student-profile {
-            text-align: center;
-        }
-
-        .student-profile .name {
+        .name {
             font-weight: bold;
         }
 
-        .student-profile .title,
-        .student-profile .batch {
-            font-size: 11px;
-            color: #444;
-        }
-
-        ul {
-            margin: 0;
-            padding-left: 15px;
-        }
-
-        .portfolio img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .portfolio {
-            text-align: center;
-        }
-
-        .summary-row td {
-            font-weight: bold;
-            background-color: #f9f9f9;
+        .small {
+            font-size: 12px;
+            color: #555;
         }
 
         a {
-            color: #0000ee;
+            color: blue;
             text-decoration: none;
         }
 
         a:hover {
             text-decoration: underline;
+        }
+
+        .summary {
+            font-weight: bold;
+            background-color: #f5f5f5;
         }
     </style>
 </head>
@@ -106,355 +78,702 @@
 <body>
 
     <div class="container">
+
         <h2>Student Performance Report</h2>
-        <div class="meta">
-            <strong>Academic Year:</strong> 2026 | <strong>Department:</strong> Computer Science
-        </div>
+
+        <p>
+            <b>Academic Year:</b> 2026
+            |
+            <b>Department:</b> Computer Science
+        </p>
 
         <table>
-            <thead>
-                <tr>
-                    <th>Student ID</th>
-                    <th>Student Profile</th>
-                    <th>Contact</th>
-                    <th>Subjects & Marks</th>
-                    <th>Skills</th>
-                    <th>Hobbies</th>
-                    <th>Performance</th>
-                    <th>Portfolio</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- ST-001 -->
-                <tr>
-                    <td><strong>ST-001</strong></td>
-                    <td class="student-profile">
-                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
-                            alt="Ali Ahmed">
-                        <div class="name">Ali Ahmed</div>
-                        <div class="title">Frontend Developer</div>
-                        <div class="batch">Batch: 2026</div>
-                    </td>
-                    <td>
-                        Email:<br><a href="mailto:ali@example.com">ali@example.com</a><br><br>
-                        Phone:<br><a href="tel:+923001234567">+92 300 1234567</a><br><br>
-                        <a href="#">LinkedIn Profile</a>
-                    </td>
-                    <td>
-                        HTML: 95<br>
-                        CSS: 89<br>
-                        JavaScript: 92<br>
-                        Database: 87<br>
-                        <hr>
-                        Total: 363 / 400<br>
-                        <span style="font-size: 10px; font-style: italic;">Excellent Marks</span>
-                    </td>
-                    <td>
-                        Technical Skills
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Programming
-                                <ul>
-                                    <li>PHP</li>
-                                    <li>Python</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        Hobbies
-                        <ol style="padding-left: 15px; margin: 0;">
-                            <li>Reading</li>
-                            <li>Gaming</li>
-                            <li>Photography</li>
-                            <li>Traveling</li>
-                        </ol>
-                    </td>
-                    <td>
-                        Grade: <span style="color: goldenrod; font-weight: bold;">A+</span><br>
-                        Percentage: 90.75%<br>
-                        <span style="font-style: italic;">Excellent Performance</span><br>
-                        Position: 1st
-                    </td>
-                    <td class="portfolio">
-                        <svg height="32" viewBox="0 0 16 16" width="32" style="fill: currentColor; margin-bottom: 5px;">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                            </path>
-                        </svg><br>
-                        <a href="#">View GitHub</a>
-                    </td>
-                </tr>
 
-                <!-- ST-002 -->
-                <tr>
-                    <td><strong>ST-002</strong></td>
-                    <td class="student-profile">
-                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces"
-                            alt="Sara Khan">
-                        <div class="name">Sara Khan</div>
-                        <div class="title">UI/UX Designer</div>
-                        <div class="batch">Batch: 2026</div>
-                    </td>
-                    <td>
-                        Email:<br><a href="mailto:sara@example.com">sara@example.com</a><br><br>
-                        Phone:<br><a href="tel:+923011234567">+92 301 1234567</a><br><br>
-                        <a href="#">LinkedIn Profile</a>
-                    </td>
-                    <td>
-                        HTML: 88<br>
-                        CSS: 96<br>
-                        JavaScript: 82<br>
-                        Database: 85<br>
-                        <hr>
-                        Total: 351 / 400<br>
-                        <span style="font-size: 10px; font-style: italic;">Very Good Marks</span>
-                    </td>
-                    <td>
-                        Design Skills
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Figma</li>
-                            <li>UI/UX
-                                <ul>
-                                    <li>Wireframing</li>
-                                    <li>Prototyping</li>
-                                    <li>User Research</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        Hobbies
-                        <ol style="padding-left: 15px; margin: 0;">
-                            <li>Painting</li>
-                            <li>Music</li>
-                            <li>Traveling</li>
-                            <li>Writing</li>
-                        </ol>
-                    </td>
-                    <td>
-                        Grade: <span style="color: goldenrod; font-weight: bold;">A</span><br>
-                        Percentage: 87.75%<br>
-                        <span style="font-style: italic;">Very Good Performance</span><br>
-                        Position: 2nd
-                    </td>
-                    <td class="portfolio">
-                        <div
-                            style="background: #0054ff; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 5px; font-weight: bold;">
-                            Bē</div>
-                        <a href="#">View Portfolio</a>
-                    </td>
-                </tr>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Profile</th>
+                <th>Contact</th>
+                <th>Subjects & Marks</th>
+                <th>Skills</th>
+                <th>Hobbies</th>
+                <th>Performance</th>
+                <th>Portfolio</th>
+            </tr>
 
-                <!-- ST-003 -->
-                <tr>
-                    <td><strong>ST-003</strong></td>
-                    <td class="student-profile">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
-                            alt="Hamza Ali">
-                        <div class="name">Hamza Ali</div>
-                        <div class="title">Backend Developer</div>
-                        <div class="batch">Batch: 2026</div>
-                    </td>
-                    <td>
-                        Email:<br><a href="mailto:hamza@example.com">hamza@example.com</a><br><br>
-                        Phone:<br><a href="tel:+923021234567">+92 302 1234567</a><br><br>
-                        <a href="#">GitHub Account</a>
-                    </td>
-                    <td>
-                        HTML: 80<br>
-                        CSS: 84<br>
-                        JavaScript: 90<br>
-                        Database: 98<br>
-                        <hr>
-                        Total: 352 / 400<br>
-                        <span style="font-size: 10px; font-style: italic;">Excellent Database Skills</span>
-                    </td>
-                    <td>
-                        Backend Skills
-                        <ul>
-                            <li>PHP</li>
-                            <li>MySQL</li>
-                            <li>Python</li>
-                            <li>Backend
-                                <ul>
-                                    <li>Laravel</li>
-                                    <li>REST API</li>
-                                    <li>Node.js</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        Hobbies
-                        <ol style="padding-left: 15px; margin: 0;">
-                            <li>Cricket</li>
-                            <li>Gaming</li>
-                            <li>Coding</li>
-                            <li>Movies</li>
-                        </ol>
-                    </td>
-                    <td>
-                        Grade: <span style="color: goldenrod; font-weight: bold;">A</span><br>
-                        Percentage: 88%<br>
-                        <span style="font-style: italic;">Excellent Performance</span><br>
-                        Position: 3rd
-                    </td>
-                    <td class="portfolio">
-                        <svg height="32" viewBox="0 0 16 16" width="32" style="fill: currentColor; margin-bottom: 5px;">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                            </path>
-                        </svg><br>
-                        <a href="#">Open GitHub</a>
-                    </td>
-                </tr>
 
-                <!-- ST-004 -->
-                <tr>
-                    <td><strong>ST-004</strong></td>
-                    <td class="student-profile">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces"
-                            alt="Ayesha Malik">
-                        <div class="name">Ayesha Malik</div>
-                        <div class="title">Web Developer</div>
-                        <div class="batch">Batch: 2026</div>
-                    </td>
-                    <td>
-                        Email:<br><a href="mailto:ayesha@example.com">ayesha@example.com</a><br><br>
-                        Website:<br><a href="#">Visit Website</a>
-                    </td>
-                    <td>
-                        HTML: 94<br>
-                        CSS: 91<br>
-                        JavaScript: 95<br>
-                        Database: 90<br>
-                        <hr />
-                        Total: 370 / 400<br>
-                        <span style="font-size: 10px; font-style: italic;">Outstanding Marks</span>
-                    </td>
-                    <td>
-                        Skills
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Frameworks
-                                <ul>
-                                    <li>Bootstrap</li>
-                                    <li>React</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        Hobbies
-                        <ol style="padding-left: 15px; margin: 0;">
-                            <li>Drawing</li>
-                            <li>Reading</li>
-                            <li>Cooking</li>
-                            <li>Traveling</li>
-                        </ol>
-                    </td>
-                    <td>
-                        Grade: <span style="color: goldenrod; font-weight: bold;">A+</span><br>
-                        Percentage: 92.5%<br>
-                        <span style="font-style: italic;">Outstanding Performance</span><br>
-                        Position: 1st
-                    </td>
-                    <td class="portfolio">
-                        <svg height="32" viewBox="0 0 16 16" width="32" style="fill: currentColor; margin-bottom: 5px;">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                            </path>
-                        </svg><br>
-                        <a href="#">View Portfolio</a>
-                    </td>
-                </tr>
+            <!-- Student 1 -->
+            <tr>
 
-                <!-- ST-005 -->
-                <tr>
-                    <td><strong>ST-005</strong></td>
-                    <td class="student-profile">
-                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=faces"
-                            alt="Usman Raza">
-                        <div class="name">Usman Raza</div>
-                        <div class="title">Database Developer</div>
-                        <div class="batch">Batch: 2026</div>
-                    </td>
-                    <td>
-                        Email:<br><a href="mailto:usman@example.com">usman@example.com</a><br><br>
-                        Phone:<br><a href="tel:+923031234567">+92 303 1234567</a>
-                    </td>
-                    <td>
-                        HTML: 78<br>
-                        CSS: 82<br>
-                        JavaScript: 85<br>
-                        Database: 99<br>
-                        <hr />
-                        Total: 344 / 400<br>
-                        <span style="font-size: 10px; font-style: italic;">Excellent Database Result</span>
-                    </td>
-                    <td>
-                        Skills
-                        <ul>
-                            <li>MySQL</li>
-                            <li>SQL</li>
-                            <li>PHP</li>
-                            <li>Database
-                                <ul>
-                                    <li>Quaries</li>
-                                    <li>Joins</li>
-                                    <li>Normalization</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        Hobbies
-                        <ol style="padding-left: 15px; margin: 0;">
-                            <li>Football</li>
-                            <li>Gaming</li>
-                            <li>Photography</li>
-                            <li>Coding</li>
-                        </ol>
-                    </td>
-                    <td>
-                        Grade: <span style="color: goldenrod; font-weight: bold;">B+</span><br>
-                        Percentage: 86%<br>
-                        <span style="font-style: italic;">Good Performance</span><br>
-                        <span style="font-size: 10px; color: #c00;">Needs Improvement in HTML</span>
-                    </td>
-                    <td class="portfolio">
-                        <svg height="32" viewBox="0 0 16 16" width="32" style="fill: currentColor; margin-bottom: 5px;">
-                            <path
-                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z">
-                            </path>
-                        </svg><br>
-                        <a href="#">Visit GitHub</a>
-                    </td>
-                </tr>
+                <td>
+                    <b>ST-001</b>
+                </td>
 
-                <!-- Summary Row -->
-                <tr class="summary-row">
-                    <td colspan="2">Class Summary</td>
-                    <td>Total Students: 5</td>
-                    <td>Class Average: <span style="color: goldenrod;">88.9%</span></td>
-                    <td colspan="2">Highest: 92.5%</td>
-                    <td>
-                        Lowest: 86%
-                    </td>
-                    <td> <a href="#" style="font-weight: normal;">Back to Top</a>
-                    </td>
-                </tr>
-            </tbody>
+                <td class="student">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=faces"
+                        alt="Ali Ahmed"
+                    >
+
+                    <div class="name">Ali Ahmed</div>
+
+                    <div class="small">
+                        Frontend Developer
+                    </div>
+
+                    <div class="small">
+                        Batch: 2026
+                    </div>
+
+                </td>
+
+                <td>
+
+                    Email:
+                    <br>
+
+                    <a href="mailto:ali@example.com">
+                        ali@example.com
+                    </a>
+
+                    <br><br>
+
+                    Phone:
+                    <br>
+
+                    <a href="tel:+923001234567">
+                        +92 300 1234567
+                    </a>
+
+                    <br><br>
+
+                    <a href="#">
+                        LinkedIn Profile
+                    </a>
+
+                </td>
+
+                <td>
+
+                    HTML: 95
+                    <br>
+
+                    CSS: 89
+                    <br>
+
+                    JavaScript: 92
+                    <br>
+
+                    Database: 87
+
+                    <hr>
+
+                    <b>Total: 363 / 400</b>
+
+                    <br>
+
+                    Excellent Marks
+
+                </td>
+
+                <td>
+
+                    <b>Technical Skills</b>
+
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>PHP</li>
+                        <li>Python</li>
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <b>Hobbies</b>
+
+                    <ol>
+                        <li>Reading</li>
+                        <li>Gaming</li>
+                        <li>Photography</li>
+                        <li>Traveling</li>
+                    </ol>
+
+                </td>
+
+                <td>
+
+                    Grade: <b>A+</b>
+                    <br>
+
+                    Percentage: 90.75%
+                    <br>
+
+                    Excellent Performance
+                    <br>
+
+                    Position: 1st
+
+                </td>
+
+                <td>
+
+                    <a href="#">
+                        View GitHub
+                    </a>
+
+                </td>
+
+            </tr>
+
+
+            <!-- Student 2 -->
+            <tr>
+
+                <td>
+                    <b>ST-002</b>
+                </td>
+
+                <td class="student">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces"
+                        alt="Sara Khan"
+                    >
+
+                    <div class="name">
+                        Sara Khan
+                    </div>
+
+                    <div class="small">
+                        UI/UX Designer
+                    </div>
+
+                    <div class="small">
+                        Batch: 2026
+                    </div>
+
+                </td>
+
+                <td>
+
+                    Email:
+                    <br>
+
+                    <a href="mailto:sara@example.com">
+                        sara@example.com
+                    </a>
+
+                    <br><br>
+
+                    Phone:
+                    <br>
+
+                    <a href="tel:+923011234567">
+                        +92 301 1234567
+                    </a>
+
+                    <br><br>
+
+                    <a href="#">
+                        LinkedIn Profile
+                    </a>
+
+                </td>
+
+                <td>
+
+                    HTML: 88
+                    <br>
+
+                    CSS: 96
+                    <br>
+
+                    JavaScript: 82
+                    <br>
+
+                    Database: 85
+
+                    <hr>
+
+                    <b>Total: 351 / 400</b>
+
+                    <br>
+
+                    Very Good Marks
+
+                </td>
+
+                <td>
+
+                    <b>Design Skills</b>
+
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>Figma</li>
+                        <li>UI/UX</li>
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <b>Hobbies</b>
+
+                    <ol>
+                        <li>Painting</li>
+                        <li>Music</li>
+                        <li>Traveling</li>
+                        <li>Writing</li>
+                    </ol>
+
+                </td>
+
+                <td>
+
+                    Grade: <b>A</b>
+                    <br>
+
+                    Percentage: 87.75%
+                    <br>
+
+                    Very Good Performance
+                    <br>
+
+                    Position: 2nd
+
+                </td>
+
+                <td>
+
+                    <a href="#">
+                        View Portfolio
+                    </a>
+
+                </td>
+
+            </tr>
+
+
+            <!-- Student 3 -->
+            <tr>
+
+                <td>
+                    <b>ST-003</b>
+                </td>
+
+                <td class="student">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces"
+                        alt="Hamza Ali"
+                    >
+
+                    <div class="name">
+                        Hamza Ali
+                    </div>
+
+                    <div class="small">
+                        Backend Developer
+                    </div>
+
+                    <div class="small">
+                        Batch: 2026
+                    </div>
+
+                </td>
+
+                <td>
+
+                    Email:
+                    <br>
+
+                    <a href="mailto:hamza@example.com">
+                        hamza@example.com
+                    </a>
+
+                    <br><br>
+
+                    Phone:
+                    <br>
+
+                    <a href="tel:+923021234567">
+                        +92 302 1234567
+                    </a>
+
+                    <br><br>
+
+                    <a href="#">
+                        GitHub Account
+                    </a>
+
+                </td>
+
+                <td>
+
+                    HTML: 80
+                    <br>
+
+                    CSS: 84
+                    <br>
+
+                    JavaScript: 90
+                    <br>
+
+                    Database: 98
+
+                    <hr>
+
+                    <b>Total: 352 / 400</b>
+
+                    <br>
+
+                    Excellent Database Skills
+
+                </td>
+
+                <td>
+
+                    <b>Backend Skills</b>
+
+                    <ul>
+                        <li>PHP</li>
+                        <li>MySQL</li>
+                        <li>Python</li>
+                        <li>Laravel</li>
+                        <li>REST API</li>
+                        <li>Node.js</li>
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <b>Hobbies</b>
+
+                    <ol>
+                        <li>Cricket</li>
+                        <li>Gaming</li>
+                        <li>Coding</li>
+                        <li>Movies</li>
+                    </ol>
+
+                </td>
+
+                <td>
+
+                    Grade: <b>A</b>
+                    <br>
+
+                    Percentage: 88%
+                    <br>
+
+                    Excellent Performance
+                    <br>
+
+                    Position: 3rd
+
+                </td>
+
+                <td>
+
+                    <a href="#">
+                        Open GitHub
+                    </a>
+
+                </td>
+
+            </tr>
+
+
+            <!-- Student 4 -->
+            <tr>
+
+                <td>
+                    <b>ST-004</b>
+                </td>
+
+                <td class="student">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=100&h=100&fit=crop&crop=faces"
+                        alt="Ayesha Malik"
+                    >
+
+                    <div class="name">
+                        Ayesha Malik
+                    </div>
+
+                    <div class="small">
+                        Web Developer
+                    </div>
+
+                    <div class="small">
+                        Batch: 2026
+                    </div>
+
+                </td>
+
+                <td>
+
+                    Email:
+                    <br>
+
+                    <a href="mailto:ayesha@example.com">
+                        ayesha@example.com
+                    </a>
+
+                    <br><br>
+
+                    Website:
+                    <br>
+
+                    <a href="#">
+                        Visit Website
+                    </a>
+
+                </td>
+
+                <td>
+
+                    HTML: 94
+                    <br>
+
+                    CSS: 91
+                    <br>
+
+                    JavaScript: 95
+                    <br>
+
+                    Database: 90
+
+                    <hr>
+
+                    <b>Total: 370 / 400</b>
+
+                    <br>
+
+                    Outstanding Marks
+
+                </td>
+
+                <td>
+
+                    <b>Skills</b>
+
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                        <li>Bootstrap</li>
+                        <li>React</li>
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <b>Hobbies</b>
+
+                    <ol>
+                        <li>Drawing</li>
+                        <li>Reading</li>
+                        <li>Cooking</li>
+                        <li>Traveling</li>
+                    </ol>
+
+                </td>
+
+                <td>
+
+                    Grade: <b>A+</b>
+                    <br>
+
+                    Percentage: 92.5%
+                    <br>
+
+                    Outstanding Performance
+                    <br>
+
+                    Position: 1st
+
+                </td>
+
+                <td>
+
+                    <a href="#">
+                        View Portfolio
+                    </a>
+
+                </td>
+
+            </tr>
+
+
+            <!-- Student 5 -->
+            <tr>
+
+                <td>
+                    <b>ST-005</b>
+                </td>
+
+                <td class="student">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop&crop=faces"
+                        alt="Usman Raza"
+                    >
+
+                    <div class="name">
+                        Usman Raza
+                    </div>
+
+                    <div class="small">
+                        Database Developer
+                    </div>
+
+                    <div class="small">
+                        Batch: 2026
+                    </div>
+
+                </td>
+
+                <td>
+
+                    Email:
+                    <br>
+
+                    <a href="mailto:usman@example.com">
+                        usman@example.com
+                    </a>
+
+                    <br><br>
+
+                    Phone:
+                    <br>
+
+                    <a href="tel:+923031234567">
+                        +92 303 1234567
+                    </a>
+
+                </td>
+
+                <td>
+
+                    HTML: 78
+                    <br>
+
+                    CSS: 82
+                    <br>
+
+                    JavaScript: 85
+                    <br>
+
+                    Database: 99
+
+                    <hr>
+
+                    <b>Total: 344 / 400</b>
+
+                    <br>
+
+                    Excellent Database Result
+
+                </td>
+
+                <td>
+
+                    <b>Skills</b>
+
+                    <ul>
+                        <li>MySQL</li>
+                        <li>SQL</li>
+                        <li>PHP</li>
+                        <li>Queries</li>
+                        <li>Joins</li>
+                        <li>Normalization</li>
+                    </ul>
+
+                </td>
+
+                <td>
+
+                    <b>Hobbies</b>
+
+                    <ol>
+                        <li>Football</li>
+                        <li>Gaming</li>
+                        <li>Photography</li>
+                        <li>Coding</li>
+                    </ol>
+
+                </td>
+
+                <td>
+
+                    Grade: <b>B+</b>
+                    <br>
+
+                    Percentage: 86%
+                    <br>
+
+                    Good Performance
+                    <br>
+
+                    Needs Improvement in HTML
+
+                </td>
+
+                <td>
+
+                    <a href="#">
+                        Visit GitHub
+                    </a>
+
+                </td>
+
+            </tr>
+
+
+            <!-- Summary -->
+            <tr class="summary">
+
+                <td colspan="2">
+                    Class Summary
+                </td>
+
+                <td>
+                    Total Students: 5
+                </td>
+
+                <td>
+                    Class Average: 88.9%
+                </td>
+
+                <td colspan="2">
+                    Highest: 92.5%
+                </td>
+
+                <td>
+                    Lowest: 86%
+                </td>
+
+                <td>
+                    <a href="#">
+                        Back to Top
+                    </a>
+                </td>
+
+            </tr>
+
         </table>
+
     </div>
 
 </body>
 
 </html>
+```
